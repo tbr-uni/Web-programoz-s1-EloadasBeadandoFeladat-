@@ -1,0 +1,28 @@
+<div class="pizza-form">
+    <form onsubmit="event.preventDefault();onFormSubmit();">
+        <div>
+            <label>Pizza neve*</label>
+            <label class="validation-error hide" id="nevValidationError">A név megadása kötelező.</label>
+            <input type="text" id="pizzaNev"> </div>
+        <div>
+            <label>Kategória</label>
+            <input type="text" id="kategoria"> </div>
+        <div style="display: flex; align-items:center; gap:10px;">
+            <label>Vegetáriánus?</label>
+            <input type="checkbox" id="isVega"> </div>
+        <div class="form-action-buttons">
+            <input type="submit" value="Mentés">
+        </div>
+    </form>
+</div>
+
+<table class="list" id="pizzaTable"> <thead>
+        <tr>
+            <th>Név</th>
+            <th>Kategória</th>
+            <th>Vegán?</th>
+            <th>Műveletek</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
