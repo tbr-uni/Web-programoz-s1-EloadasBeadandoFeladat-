@@ -81,7 +81,7 @@ window.onload = function() {
 };
 
 function printArray() {
-    var table = document.getElementById("employeeList").getElementsByTagName('tbody')[0];
+    var table = document.getElementById("pizzaTable").getElementsByTagName('tbody')[0];
     table.innerHTML = "";
     for (var i = 0; i < array1.length; i++) {
         var newRow = table.insertRow(table.rows.length);
@@ -89,70 +89,42 @@ function printArray() {
         newRow.insertCell(1).innerHTML = array1[i].kategorianev;
         newRow.insertCell(2).innerHTML = array1[i].vegetarianus ? "Igen" : "Nem";
         
-        var cell3 = newRow.insertCell(3);
-        cell3.innerHTML = `<button onClick="onEdit(${i})">Szerkeszt</button> 
-                          <button onClick="onDelete(${i})">Töröl</button>`;
-    }
-}
-
-function onFormSubmit() {
-    if (validate()) {
-        var formData = readFormData();
-        if (selectedIndex == null)
-            insertNewRecord(formData);
-        else
-            updateRecord(formData);
-        resetForm();
+        newRow.insertCell(3).innerHTML = `
+            <button onClick="onEdit(${i})">Szerkeszt</button> 
+            <button onClick="onDelete(${i})">Töröl</button>`;
     }
 }
 
 function readFormData() {
     return {
-        nev: document.getElementById("fullName").value,
-        kategorianev: document.getElementById("email").value, // Using old ID email for category
-        vegetarianus: document.getElementById("salary").checked // Using old ID salary for checkbox
+        nev: document.getElementById("pizzaNev").value,
+        kategorianev: document.getElementById("kategoria").value,
+        vegetarianus: document.getElementById("isVega").checked
     };
-}
-
-function insertNewRecord(data) {
-    array1.push(data);
-    printArray();
 }
 
 function onEdit(index) {
     selectedIndex = index;
-    document.getElementById("fullName").value = array1[index].nev;
-    document.getElementById("email").value = array1[index].kategorianev;
-    document.getElementById("salary").checked = array1[index].vegetarianus;
-}
-
-function updateRecord(formData) {
-    array1[selectedIndex] = formData;
-    printArray();
-}
-
-function onDelete(index) {
-    if (confirm('Biztosan törölni akarod?')) {
-        array1.splice(index, 1);
-        printArray();
-        resetForm();
-    }
+    var data = array1[index];
+    document.getElementById("pizzaNev").value = data.nev;
+    document.getElementById("kategoria").value = data.kategorianev;
+    document.getElementById("isVega").checked = data.vegetarianus;
 }
 
 function resetForm() {
-    document.getElementById("fullName").value = "";
-    document.getElementById("email").value = "";
-    document.getElementById("salary").checked = false;
+    document.getElementById("pizzaNev").value = "";
+    document.getElementById("kategoria").value = "";
+    document.getElementById("isVega").checked = false;
     selectedIndex = null;
 }
 
 function validate() {
     var isValid = true;
-    if (document.getElementById("fullName").value == "") {
+    if (document.getElementById("pizzaNev").value == "") {
         isValid = false;
-        document.getElementById("fullNameValidationError").classList.remove("hide");
+        document.getElementById("nevValidationError").classList.remove("hide");
     } else {
-        document.getElementById("fullNameValidationError").classList.add("hide");
+        document.getElementById("nevValidationError").classList.add("hide");
     }
     return isValid;
 }
