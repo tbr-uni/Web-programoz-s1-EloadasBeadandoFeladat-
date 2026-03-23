@@ -76,12 +76,13 @@ var array1 = [
     {"nev": "Zöldike", "kategorianev": "főnemes", "vegetarianus": true}
 ];
 
+
 window.onload = function() {
     printArray();
 };
 
 function printArray() {
-    var table = document.getElementById("pizzaTable").getElementsByTagName('tbody')[0];
+    var table = document.getElementById("pizzaList").getElementsByTagName('tbody')[0];
     table.innerHTML = "";
     for (var i = 0; i < array1.length; i++) {
         var newRow = table.insertRow(table.rows.length);
@@ -89,9 +90,22 @@ function printArray() {
         newRow.insertCell(1).innerHTML = array1[i].kategorianev;
         newRow.insertCell(2).innerHTML = array1[i].vegetarianus ? "Igen" : "Nem";
         
-        newRow.insertCell(3).innerHTML = `
-            <button onClick="onEdit(${i})">Szerkeszt</button> 
-            <button onClick="onDelete(${i})">Töröl</button>`;
+        var cellAction = newRow.insertCell(3);
+        cellAction.innerHTML = `<button onClick="onEdit(${i})">Szerkeszt</button> 
+                                <button onClick="onDelete(${i})">Töröl</button>`;
+    }
+}
+
+function onFormSubmit() {
+    if (validate()) {
+        var formData = readFormData();
+        if (selectedIndex == null) {
+            array1.push(formData);
+        } else {
+            array1[selectedIndex] = formData;
+        }
+        resetForm();
+        printArray();
     }
 }
 
@@ -109,6 +123,14 @@ function onEdit(index) {
     document.getElementById("pizzaNev").value = data.nev;
     document.getElementById("kategoria").value = data.kategorianev;
     document.getElementById("isVega").checked = data.vegetarianus;
+}
+
+function onDelete(index) {
+    if (confirm('Biztosan törölni szeretnéd ezt a pizzát?')) {
+        array1.splice(index, 1);
+        printArray();
+        resetForm();
+    }
 }
 
 function resetForm() {
