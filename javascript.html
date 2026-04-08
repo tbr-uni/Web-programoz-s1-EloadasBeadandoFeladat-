@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Pizza Nyilvántartás</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1><center>Pizza Adatbázis</center></h1>
+    <hr>
+
+    <div class="pizza-form">
+        <form onsubmit="event.preventDefault(); onFormSubmit();" autocomplete="off">
+            <div>
+                <label>Pizza neve*</label>
+                <label class="validation-error hide" id="nevValidationError">A név megadása kötelező.</label>
+                <input type="text" name="pizzaNev" id="pizzaNev" placeholder="Példa: Margherita">
+            </div>
+            
+            <div>
+                <label>Kategória</label>
+                <input type="text" name="kategoria" id="kategoria" placeholder="Példa: király, lovag...">
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: 10px; margin: 10px 0;">
+                <label>Vegetáriánus?</label>
+                <input type="checkbox" name="isVega" id="isVega">
+            </div>
+
+            <div class="form-action-buttons">
+                <input type="submit" value="Mentés">
+            </div>
+        </form>
+    </div>
+
+    <br/>
+
+    <div class="pizza-table">
+        <table class="list" id="pizzaList">
+            <thead>
+                <tr>
+                    <th>Név</th>
+                    <th>Kategória</th>
+                    <th>Vega?</th>
+                    <th>Műveletek</th>
+                </tr>
+            </thead>
+            <tbody>
+                </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
