@@ -1,0 +1,79 @@
+.calculator {
+    width: 380px; /* Fix szélesség, hogy ne nyúljon el */
+    background-color: lightcyan;
+    display: grid;
+    padding: 15px;
+    margin: 20px auto;
+    border: ridge 5px #add8e6;
+    border-radius: 12px;
+}
+
+.calculator-input {
+    border: ridge 3px black;
+    background-color: white;
+    text-align: right;
+    padding: 10px;
+    margin-bottom: 15px;
+    min-height: 80px;
+}
+
+.result {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.calculator-keypad {
+    display: grid;
+    /* 4 egyenlő oszlop: 3 a számoknak, 1 az operátoroknak */
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+        "keys-function keys-function keys-function keys-operators"
+        "keys-numbers  keys-numbers  keys-numbers  keys-operators"
+        "keys-numbers  keys-numbers  keys-numbers  keys-operators"
+        "keys-numbers  keys-numbers  keys-numbers  keys-operators"
+        "keys-numbers  keys-numbers  keys-numbers  keys-operators"
+        "keys-numbers  keys-numbers  keys-numbers  keys-operators";
+    gap: 5px;
+    background-color: lightblue;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.keys-function { 
+    grid-area: keys-function; 
+    display: flex;
+    justify-content: flex-start; 
+}
+
+.keys-operators { 
+    grid-area: keys-operators; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 4px;
+}
+
+.keys-numbers { 
+    grid-area: keys-numbers; 
+    display: grid;
+    
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 5px;
+    direction: ltr; 
+}
+
+
+.keys-numbers button, .keys-function button {
+    width: 100%; 
+    height: 3.8rem;
+    margin: 0;
+}
+
+.keys-operators button {
+    width: 100%;
+    height: 3.5rem;
+    margin: 0;
+    font-size: 0.85rem; 
+}
+
+.plus-btn { background-color: #ffd700 !important; }
+.equals-btn { background-color: #4caf50 !important; color: white !important; }

@@ -1,0 +1,25 @@
+button {
+    width: 4rem; 
+    height: 3.5rem;
+    margin: 2px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 1px 1px 2px grey;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    transition: all 0.1s;
+    overflow: hidden; 
+}
+
+button:active {
+    transform: scale(0.95);
+    box-shadow: none;
+}
+
+
+.keys-operators button {
+    width: 4.5rem;
+    background-color: #e9ecef;
+}
