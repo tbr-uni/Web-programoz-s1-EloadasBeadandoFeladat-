@@ -121,8 +121,6 @@ function App() {
             </div>
           </div>
         </div>
-
-        {/* TÁBLÁZAT */}
         <div className="table-responsive">
           <table className="table table-striped table-hover border">
             <thead className="table-dark">
