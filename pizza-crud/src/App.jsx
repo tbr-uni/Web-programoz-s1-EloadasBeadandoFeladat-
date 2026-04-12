@@ -4,8 +4,7 @@ import EditPizzaForm from "./forms/EditPizzaForm";
 import AddPizzaForm from "./forms/AddPizzaForm";
 
 const App = () => {
-  // A pizza.txt alapján összeállított teljes kezdőlista
-  const initialPizzas = [
+    const initialPizzas = [
     { id: 1, nev: "Áfonyás", kategorianev: "király", vegetarianus: false },
     { id: 2, nev: "Babos", kategorianev: "lovag", vegetarianus: false },
     { id: 3, nev: "Barbecue chicken", kategorianev: "lovag", vegetarianus: false },
