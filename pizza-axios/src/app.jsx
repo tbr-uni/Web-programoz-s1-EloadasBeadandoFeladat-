@@ -5,7 +5,6 @@ function App() {
   const [orders, setOrders] = useState([]);
   const [visibleCount, setVisibleCount] = useState(50); // 50-es limit
   const [message, setMessage] = useState("");
-  
   const [pizzanev, setPizzanev] = useState("");
   const [darab, setDarab] = useState("");
   const [felvetel, setFelvetel] = useState("");
@@ -61,7 +60,6 @@ function App() {
         </div>
       </header>
 
-      {/* TELJES NAVBAR - ÓRAI MINTA SZERINT */}
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">Navbar</a>
