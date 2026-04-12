@@ -51,7 +51,6 @@ function fetchOrders(append = false) {
                 tableBody.innerHTML = rows;
             }
 
-            // Gomb elrejtése, ha nincs több adat
             document.getElementById("loadMoreBtn").style.display = (data.readData.length < 50) ? "none" : "block";
         });
 }
