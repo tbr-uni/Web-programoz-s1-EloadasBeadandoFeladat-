@@ -8,7 +8,6 @@ body {
   min-height: 100vh;
 }
 
-/* Bootstrap gombok finomhangolása az SPA menühöz */
 .btn-group .btn {
   padding: 15px;
   font-weight: bold;
