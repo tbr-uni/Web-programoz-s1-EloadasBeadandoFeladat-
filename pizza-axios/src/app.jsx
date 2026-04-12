@@ -6,7 +6,6 @@ function App() {
   const [visibleCount, setVisibleCount] = useState(50); // 50-es limit
   const [message, setMessage] = useState("");
   
-  // Pizza mezők
   const [pizzanev, setPizzanev] = useState("");
   const [darab, setDarab] = useState("");
   const [felvetel, setFelvetel] = useState("");
