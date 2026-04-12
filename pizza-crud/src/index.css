@@ -47,7 +47,6 @@ input[type=text], input[type=number] {
     box-sizing: border-box;
 }
 
-/* --- MÓDOSÍTÁS: a sima button és a submit gomb is ugyanazt a stílust kapja --- */
 input[type=submit], button {
     width: auto; 
     min-width: 30%;
@@ -60,7 +59,6 @@ input[type=submit], button {
     font-size: 14px;
 }
 
-/* Gomb hover effekt  */
 button:hover {
     background-color: #333;
 }
