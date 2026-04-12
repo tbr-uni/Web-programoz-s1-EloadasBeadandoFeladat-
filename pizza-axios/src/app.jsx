@@ -55,7 +55,7 @@ function App() {
 
   return (
     <div>
-      {/* HEADER - ÓRAI MINTA */}
+     
       <header className="bg-dark text-white py-4">
         <div className="container text-center">
           <h1>Web programozás-1 Előadás Házi feladat</h1>
