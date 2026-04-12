@@ -96,8 +96,6 @@ function App() {
 
       <main className="container mt-4">
         {message && <div className="alert alert-success alert-dismissible fade show">{message}</div>}
-
-        {/* ADATFELVÉTEL / SZERKESZTÉS */}
         <div className="card p-3 mb-4 shadow-sm bg-light">
           <h3>{editId ? "Rendelés módosítása" : "Új pizza rendelés"}</h3>
           <div className="row g-2">
