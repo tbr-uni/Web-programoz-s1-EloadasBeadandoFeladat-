@@ -153,8 +153,6 @@ function App() {
             </tbody>
           </table>
         </div>
-
-        {/* TÖBB BETÖLTÉSE GOMB */}
         {visibleCount < orders.length && (
           <div className="text-center my-4">
             <button className="btn btn-outline-secondary px-5" onClick={loadMore}>
