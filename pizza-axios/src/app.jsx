@@ -17,7 +17,6 @@ function App() {
   const fetchOrders = async () => {
     try {
       const res = await axios.get("api.php");
-      // RENDEZÉS: b.az - a.az (A legnagyobb ID, azaz a legújabb van legfelül)
       const sorted = res.data.readData.sort((a, b) => b.az - a.az);
       setOrders(sorted);
     } catch (e) { console.error("Hiba az adatok lekérésekor", e); }
