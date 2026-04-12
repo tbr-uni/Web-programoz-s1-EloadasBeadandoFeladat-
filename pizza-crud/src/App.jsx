@@ -150,7 +150,6 @@ const App = () => {
         </div>
       </nav>
 
-      {/* CRUD ALKALMAZÁS TARTALMA */}
       <div className="container mt-4">
         <h1 className="text-center">Pizza CRUD Alkalmazás (React)</h1>
         <hr />
