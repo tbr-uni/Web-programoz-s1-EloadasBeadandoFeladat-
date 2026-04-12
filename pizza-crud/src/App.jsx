@@ -110,14 +110,12 @@ const App = () => {
 
   return (
     <>
-      {/* HEADER SZAKASZ */}
       <header className="bg-dark text-white py-4">
         <div className="container text-center">
           <h1>Web programozás-1 Előadás Házi feladat</h1>
         </div>
       </header>
 
-      {/* NAVIGÁCIÓS SZAKASZ - React aktív állapotra állítva */}
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">Navbar</a>
